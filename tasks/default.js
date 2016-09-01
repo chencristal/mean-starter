@@ -2,4 +2,5 @@
 
 var gulp = require('gulp');
 
-gulp.task('default', ['nodemon']);
+gulp.task('build', ['build-vendor-src', 'build-app-src']);
+gulp.task('default', ['browser-sync', 'nodemon', 'watch']);

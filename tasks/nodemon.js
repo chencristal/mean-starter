@@ -9,7 +9,7 @@ gulp.task('nodemon', cb=> {
   var isFirstStart = true;
   return nodemon({ 
     script: './server/app.js', 
-    ext: 'js',
+    ext: 'js json',
     watch: [
       paths.config,
       paths.server
