@@ -1,11 +1,12 @@
-# express-starter
+# mean-starter
 `MEAN` project template.
 
 
 ### Used packages
  - Backend - `express`
  - Frontend - `angular v1.x`
- - Css preprocessor - `styl`
+ - CSS preprocessor - `styl`
+ - CSS framework - `boostrap`
  - View engine - `jade`
  - Database - `mongodb`
  - Promises - `bluebird`

@@ -1,0 +1,17 @@
+include ../navbar.jade
+
+div(ng-show="isLoading")
+  include ../common/spinner.jade
+.container(ng-hide="isLoading")
+  .row
+    .col-md-12
+      h2 {{ user.name }}
+  .row
+    .col-md-12
+      p Email:&nbsp;
+        a(href="mailto:{{ user.email }}") {{ user.email }}
+  .row
+    .col-md-12
+      .buttons.text-right
+        a.btn.btn-default(href="/users") Cancel
+        a.btn.btn-primary(href="/users/{{ user._id }}/edit") Edit
