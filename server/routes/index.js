@@ -5,6 +5,12 @@ var log = require('../util/logger').logger;
 module.exports = function(app) {
   require('./users')(app);
 
+  app.get('*', function(req, res) {
+    res.render('index', {
+      version: '0.0.1'
+    });
+  });
+
   app.use(function(req, res, next) {
     var err = new Error('Invalid end point');
     err.statusCode = 404;
