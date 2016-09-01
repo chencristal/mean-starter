@@ -14,8 +14,11 @@ nconf
     .file(envConfigFilepath)
     .file('defaults', defConfigFilepath);
 
+var root = path.normalize(__dirname + '/../../');
 nconf.set('env', process.env.NODE_ENV);
-nconf.set('rootPath', path.normalize(__dirname + '/../../'));
+nconf.set('rootPath', root);
+nconf.set('viewsPath', path.join(root, 'server/views'));
+nconf.set('publicPath', path.join(root, 'public'));
 
 function _convertKeysLoLowerCase(obj) {
     _.each(obj, function(value, key) {
