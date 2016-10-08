@@ -7,13 +7,13 @@ angular.module('app', [
 ])
 .config(function($routeProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
-  
+
   $routeProvider
     .when('/not-found', {
-      templateUrl: 'views/not-found.html',
+      templateUrl: 'views/common/not-found.html',
     })
     .when('/', {
-      templateUrl: 'views/home.html',
+      templateUrl: 'views/home/home.html',
       controller: 'HomeCtrl'
     })
     .when('/users', {

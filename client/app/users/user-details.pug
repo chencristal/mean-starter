@@ -1,16 +1,17 @@
-include ../navbar.pug
+include ../layout/navbar.pug
 
 div(ng-show="isLoading")
   include ../common/spinner.pug
 .container(ng-hide="isLoading")
   .row
     .col-md-12
-      h2 Edit User {{ ::user.name }}
+      h2 {{ user.name }}
   .row
     .col-md-12
-      include ./form.pug
+      p Email:&nbsp;
+        a(href="mailto:{{ user.email }}") {{ user.email }}
   .row
     .col-md-12
       .buttons.text-right
         a.btn.btn-default(href="/users") Cancel
-        button.btn.btn-primary(ng-click="saveUser()" ng-disabled="isSaving") Save
+        a.btn.btn-primary(href="/users/{{ user._id }}/edit") Edit

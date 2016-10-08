@@ -9,8 +9,8 @@ var paths    = require('../config/gulp').paths;
 
 gulp.task('lint-client', () => {
   return gulp
-    .src(paths.clientJs + filters.jsDeep)
-    .pipe(jshint(paths.clientJs + '.jshintrc'))
+    .src(paths.clientApp + filters.jsDeep)
+    .pipe(jshint(paths.clientApp + '.jshintrc'))
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(jshint.reporter('fail'));
 });
@@ -18,7 +18,7 @@ gulp.task('lint-client', () => {
 gulp.task('lint-views', () => {
   return gulp
     .src([
-      paths.clientViews + filters.pugDeep,
+      paths.clientApp + filters.pugDeep,
       paths.serverViews + filters.pugDeep
     ])
     .pipe(gpuglint());

@@ -22,7 +22,7 @@ var filters     = require('../config/gulp').filters;
 /* jshint camelcase: false */
 gulp.task('build-app-js', () => {
   return gulp
-    .src(paths.clientJs + filters.jsDeep)
+    .src(paths.clientApp + filters.jsDeep)
     .pipe(gplumber())
     .pipe(gif(args.isNotProduction, gcached('scripts')))
     .pipe(gsourcemaps.init())
@@ -44,7 +44,7 @@ gulp.task('build-app-js', () => {
 
 gulp.task('build-app-css', () => {
   return gulp
-    .src(paths.clientCss + filters.stylDeep)
+    .src(paths.clientApp + filters.stylDeep)
     .pipe(gplumber())
     .pipe(gif(args.isNotProduction, gcached('styles')))
     .pipe(gif(args.isNotProduction, gsourcemaps.init()))
@@ -65,7 +65,7 @@ gulp.task('build-app-css', () => {
 
 gulp.task('build-app-views', () => {
   return gulp
-    .src(paths.clientViews + filters.pugDeep)
+    .src(paths.clientApp + filters.pugDeep)
     .pipe(gplumber())
     .pipe(gif(args.isNotProduction, gchanged(paths.distViews, { extension: '.html' })))
     .pipe(gpug())
