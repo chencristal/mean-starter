@@ -33,3 +33,6 @@ bower_components
 
 # Generated files
 public
+
+# Temporary files
+tmp
